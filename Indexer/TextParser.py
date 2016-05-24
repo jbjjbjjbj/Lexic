@@ -1,4 +1,11 @@
 #!/usr/bin/python3
 
-def parse(file):
-    raise Exception("Not implemented yet")
+import DatabaseHelper
+
+def parse(file_url):
+    with open(file_url, 'r') as f:
+        for line in f:
+            prevWord = ""
+            for word in line.split():
+                DatabaseHelper.addToDatabase(prevWord, word)
+                prevWord = word
