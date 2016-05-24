@@ -3,6 +3,7 @@
 import DatabaseHelper
 
 def parse(file_url):
+    DatabaseHelper.initiateDB()
     with open(file_url, 'r') as f:
         for line in f:
             prevWord = ""
