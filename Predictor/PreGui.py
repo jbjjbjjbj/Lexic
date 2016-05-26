@@ -9,12 +9,16 @@ def doStuff():
 
 
 
-def changeWords():
-    for i in ["hej", "med", "dig"]:
+def changeWords(word):
+    for b in range(len(buttons)):
+        buttons[b].destroy()
+
+    for i in word:
         buttons.append(tkinter.Button(window, text = i, command = doStuff))
 
         buttons[len(buttons)-1].pack()
 
 
-changeWords()
+changeWords(["hej", "med", "dig"])
+
 window.mainloop()
